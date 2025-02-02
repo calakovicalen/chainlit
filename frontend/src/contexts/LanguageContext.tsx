@@ -28,7 +28,6 @@ export const LanguageProvider = ({
   const { data: translations } = useApi<any>(
     `/project/translations?language=${languageInUse}`
   );
-  console.log(translations);
 
   const handleChangeLanguage = (languageBundle: any): void => {
     i18n.addResourceBundle(languageInUse, 'translation', languageBundle);

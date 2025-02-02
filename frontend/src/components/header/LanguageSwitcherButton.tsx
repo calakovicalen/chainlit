@@ -10,6 +10,8 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 
+import { Translator } from '../i18n';
+
 interface Props {
   className?: string;
 }
@@ -43,10 +45,10 @@ export function LanguageSwitcherButton({ className }: Props) {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => handleLanguageSwitch('en-US')}>
-          English
+          <Translator path="navigation.header.language.en" />
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleLanguageSwitch('sr-RS')}>
-          Serbian
+          <Translator path="navigation.header.language.sr" />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
