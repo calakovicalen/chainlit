@@ -8,6 +8,7 @@ import { useSidebar } from '@/components/ui/sidebar';
 
 import ApiKeys from './ApiKeys';
 import ChatProfiles from './ChatProfiles';
+import { LanguageSwitcherButton } from './LanguageSwitcherButton';
 import NewChatButton from './NewChat';
 import ReadmeButton from './Readme';
 import SidebarTrigger from './SidebarTrigger';
@@ -59,6 +60,7 @@ const Header = memo(() => {
       <div className="flex items-center gap-1">
         <ReadmeButton />
         <ApiKeys />
+        <LanguageSwitcherButton />
         <ThemeToggle />
         <UserNav />
       </div>
