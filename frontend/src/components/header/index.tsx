@@ -9,8 +9,8 @@ import { useSidebar } from '@/components/ui/sidebar';
 import ApiKeys from './ApiKeys';
 import ChatProfiles from './ChatProfiles';
 import { LanguageSwitcherButton } from './LanguageSwitcherButton';
+import LoginButton from './LoginButton';
 import NewChatButton from './NewChat';
-import ReadmeButton from './Readme';
 import SidebarTrigger from './SidebarTrigger';
 import { ThemeToggle } from './ThemeToggle';
 import UserNav from './UserNav';
@@ -38,9 +38,11 @@ const Header = memo(() => {
             <NewChatButton navigate={navigate} />
           ) : null
         ) : (
-          <NewChatButton navigate={navigate} />
+          <>
+            <NewChatButton navigate={navigate} />
+            <LoginButton />
+          </>
         )}
-
         <ChatProfiles navigate={navigate} />
       </div>
 
@@ -58,7 +60,6 @@ const Header = memo(() => {
 
       <div />
       <div className="flex items-center gap-1">
-        <ReadmeButton />
         <ApiKeys />
         <LanguageSwitcherButton />
         <ThemeToggle />
