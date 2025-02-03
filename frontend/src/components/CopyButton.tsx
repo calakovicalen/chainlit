@@ -30,6 +30,9 @@ const CopyButton = ({ content, className }: Props) => {
       await navigator.clipboard.writeText(textToCopy);
       setCopied(true);
 
+      // Show toast notification on successful copy
+      toast.success(t('chat.messages.actions.copy.success'));
+
       // Reset copied state after 2 seconds
       setTimeout(() => {
         setCopied(false);

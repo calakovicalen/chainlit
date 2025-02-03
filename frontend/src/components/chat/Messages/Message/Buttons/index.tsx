@@ -6,10 +6,13 @@ import {
 } from '@chainlit/react-client';
 
 import CopyButton from '@/components/CopyButton';
+import LikeButton from '@/components/LikeButton';
 
 import MessageActions from './Actions';
 import { DebugButton } from './DebugButton';
 import { FeedbackButtons } from './FeedbackButtons';
+
+// Import the LikeButton
 
 interface Props {
   message: IStep;
@@ -31,7 +34,8 @@ const MessageButtons = ({ message, actions, run }: Props) => {
   const showDebugButton =
     !!config?.debugUrl && !!message.threadId && !!firstInteraction;
 
-  const show = showCopyButton || showDebugButton || messageActions?.length;
+  const show =
+    showCopyButton || showDebugButton || messageActions?.length || hasContent;
 
   if (!show || message.streaming) {
     return null;
@@ -47,6 +51,7 @@ const MessageButtons = ({ message, actions, run }: Props) => {
       {showDebugButton ? (
         <DebugButton debugUrl={config.debugUrl!} step={message} />
       ) : null}
+      {hasContent ? <LikeButton /> : null}
     </div>
   );
 };
